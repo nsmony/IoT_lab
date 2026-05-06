@@ -145,8 +145,6 @@ System is tested under different conditions to measure:
 
 ## VIII. System Workflow
 
-This workflow is consistent with the system flow diagram shown on Page 5 .
-
 <img width="8192" height="919" alt="ESP32 LCD HTTP Route Flow-2026-05-03-154735" src="https://github.com/user-attachments/assets/7ca9c21d-e451-4d93-9729-5dfe397c1fbb" />
 
 
