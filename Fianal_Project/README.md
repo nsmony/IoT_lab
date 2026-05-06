@@ -39,7 +39,8 @@ The system follows this structure:
 
 **Input → Edge Processing → Output → Action**
 ### System Architecture Diagram
-![[mermaid-diagram-architecture.png]]
+<img width="7059" height="4224" alt="ESP32 LCD HTTP Route Flow-2026-05-03-153937" src="https://github.com/user-attachments/assets/9adf51d7-b48e-44c9-97b7-9fa95b160078" />
+
 
 This architecture is also illustrated in the system architecture diagram, showing the interaction between hardware, control logic, and AI server layers .
 
@@ -138,14 +139,16 @@ System is tested under different conditions to measure:
 - Motor Driver
 - Power Supply
 
-![[Hardware.png]]
+<img width="2030" height="916" alt="Hardware" src="https://github.com/user-attachments/assets/a85eaa80-f679-43b0-b6b1-a58d44ce4ffe" />
+
 
 
 ## VIII. System Workflow
 
 This workflow is consistent with the system flow diagram shown on Page 5 .
 
-![[mermaid-diagram-flow.png]]
+<img width="8192" height="919" alt="ESP32 LCD HTTP Route Flow-2026-05-03-154735" src="https://github.com/user-attachments/assets/7ca9c21d-e451-4d93-9729-5dfe397c1fbb" />
+
 
 ## IX. Model Training
 
