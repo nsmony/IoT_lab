@@ -1,73 +1,199 @@
-# Final Project
-## AgriSafe Rot Spotter: A Multi-Modal Edge-AI System for Early Post-Harvest Spoilage Detection
-### I.Project Overview
-This project, AgriSafe Rot-Spotter: A Multi-Modal Edge-AI System for Early Post-Harvest Spoilage Detection, is an IoT-based system that helps detect spoilage early. It uses sensors and a camera to monitor things like temperature , humidity, and the condition of the food. The system uses AI on a local device (edge device) to analyze the data quickly. With this system, users can know early when food stars to spoil and take action in time. It helps reduce waste, save money, and improve food quality. 
-### II. Problem
+**Course:** ICT 360
+**University:** American University of Phnom Penh  
+**Group:** Group 4
+**Instructor:** Professor Seng Theara
+
+
+## I. Project Overview
+
+AgriSafe Rot Spotter is an IoT-based system designed to detect post-harvest spoilage at an early stage using a multi-modal approach. The system integrates environmental sensors and computer vision to monitor the condition of stored agricultural products such as fruits and vegetables.
+
+The system uses Edge AI (local processing) to analyze both sensor data and images in real time. By combining temperature, humidity, and visual features such as color and texture, the system can identify early signs of spoilage before they become severe.
+
+This allows users to take action early, reducing food waste, saving costs, and improving overall food quality.
+
+
+## II. Problem Statement
+
 Post-harvest spoilage is a major issue in agriculture:
-- Large amount of food is wasted due to late detection
+
+- Large amounts of food are wasted due to late detection
 - Manual inspection is slow and inaccurate
-- Environmental conditions are not properly monitored.
-### III. Objective
-- Combine image and sensor data (multi-modal approach)
+- Environmental conditions are not continuously monitored
+- Lack of automation leads to delayed response and financial loss
+
+Spoilage commonly occurs during storage and transportation, causing significant waste and economic damage .
+
+
+## III. Objectives
+
+- Combine image and sensor data (multi-modal detection)
 - Detect spoilage at an early stage
 - Process data locally using Edge AI
-- Reduce agricultural losses
-### IV. System Architecture
-Input -> Edge Processing -> Output -> Action
-#### 1. Input
-- ESP32-CAM captures images of crops
-- DHT11 sensor measures temperature & humidity
-- IR sensor detects object presence.
-#### 2. Processing
+- Reduce agricultural losses and improve efficiency
+
+
+## IV. System Architecture
+
+The system follows this structure:
+
+**Input → Edge Processing → Output → Action**
+### System Architecture Diagram
+![[mermaid-diagram-architecture.png]]
+
+This architecture is also illustrated in the system architecture diagram, showing the interaction between hardware, control logic, and AI server layers .
+
+
+### 1. Input
+
+- ESP32-CAM captures images of fruits
+- DHT11 sensor measures temperature and humidity
+- IR sensor detects object presence
+
+
+### 2. Processing
+
 - ESP32 processes sensor and image data
-- AI analyzes color, texture, and environment
-- Web Server with internet connection for remote monitoring
-#### 3. Output
+- AI model analyzes color, texture, and environmental conditions
+- Web server enables remote monitoring
+
+
+### 3. Output
+
 - LCD displays system status
-- Online web dashboard shows live data
-- Alerts triggered when spoilage detected.
-#### 4. Action
-- Servo/DC motor controls gate
+- Web dashboard shows real-time data
+- Alerts notify users when spoilage is detected
+
+
+### 4. Action
+
+- Servo/DC motor controls sorting gate
 - Gate closes if spoilage detected
-- Gate remains open if crops are healthy.
-### V. Key Features
-- Multi-modal detection (image + sensors)
-- Real-time monitoring
-- Internet-enable web server (remote access)
+- Gate remains open if fruits are healthy
+
+
+## V. Key Features
+
+- Multi-modal detection (image + sensor data)
+- Real-time monitoring system
+- Internet-enabled web dashboard
 - Edge computing (low latency)
 - Automatic gate control
-- Early warming system
-- Low-cost and scalable.
-### VI. Methodology 
-#### 1. System Design
-Design connections between ESP32, sensors, camera, actuators, and internet connectivity.
-#### 2. Data Processing
-Process real-time data locally using AI or rule-based logic.
-#### 3. Spoilage Detection
-Detect color changes, texture issues, and environmental risks.
-#### 4. Automated Response
-Close gate and trigger alerts is spoilage detected
-#### 5. Alert System
-Display warnings on LCD and online web dashboard
-#### 6. Testing & Evaluation
-Test under different conditions to measure accuracy and performance.
-### VII. Components
+- Early warning system
+- Low-cost and scalable design
+
+
+## VI. Methodology
+
+### 1. System Design
+
+The system integrates ESP32, sensors, camera, motors, and network connectivity into a unified workflow.
+
+
+### 2. Data Processing
+
+Sensor and image data are processed locally using Edge AI or rule-based logic for fast response.
+
+
+### 3. Spoilage Detection
+
+Spoilage is detected based on:
+
+- Color changes
+- Texture abnormalities
+- Environmental conditions (temperature and humidity)
+
+
+### 4. Automated Response
+
+- Gate closes when spoilage is detected
+- Prevents spoiled fruits from continuing
+
+
+### 5. Alert System
+
+- LCD displays warnings
+- Web dashboard shows live status
+- Alerts notify users immediately
+
+
+### 6. Testing and Evaluation
+
+System is tested under different conditions to measure:
+
+- Accuracy
+- Response time
+- System reliability
+
+
+## VII. Components
+
 - ESP32
-- ESP32-CAM
+- DroidCam
 - DHT11 Sensor
-- 12C LCD Display
+- I2C LCD Display
 - IR Sensor
 - Servo Motor
-- 2 DC Motor
+- 2 DC Motors
+- Motor Driver
 - Power Supply
-### VIII. How it works
-1. Capture image of stored fruits
-2. Collect environmental data from sensors
-3. Process data using AI model
-4. Detect spoilage condition
-5. Send alert to user.
-### IX. Results
+
+![[Hardware.png]]
+
+
+## VIII. System Workflow
+
+This workflow is consistent with the system flow diagram shown on Page 5 .
+
+![[mermaid-diagram-flow.png]]
+
+## IX. Model Training
+
+The AI model is trained using **YOLO26l** with a custom dataset.
+
+Dataset includes:
+
+- Fresh grape
+- Rotten grape
+- Fresh strawberry
+- Rotten strawberry
+
+The dataset was manually collected and labeled to improve detection accuracy.
+
+
+## X. Challenges and Solutions
+
+### Challenges:
+
+- ESP32-CAM has low image quality → reduced model accuracy
+- Limited dataset
+- Lack of experience in model training
+
+### Solutions:
+
+- Used **DroidCam** for higher-quality image input
+- Recollected and expanded dataset
+- Improved training process
+
+
+## XI. Results
+
 - Early detection of spoilage
 - Improved accuracy using multi-modal data
-- Reduced food loss in storage
+- Reduced food loss during storage
+- Faster response compared to manual inspection
 
+
+## XII. Conclusion
+
+AgriSafe Rot Spotter demonstrates how IoT and Edge AI can be combined to solve real-world agricultural problems. By integrating sensor data with image analysis, the system provides an efficient solution for early spoilage detection and automated response.
+
+This project highlights the potential of smart agriculture systems in reducing waste, improving food quality, and increasing operational efficiency.
+
+
+## XIII. Future Improvements
+
+- Improve AI model accuracy with larger dataset
+- Add cloud integration for data analytics
+- Expand to more types of fruits and vegetables
+- Enhance mobile app support for monitoring
