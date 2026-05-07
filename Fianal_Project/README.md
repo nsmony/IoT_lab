@@ -184,6 +184,7 @@ The dataset was manually collected and labeled to improve detection accuracy.
 - Reduced food loss during storage
 - Faster response compared to manual inspection
 - Demo: https://youtu.be/Q2_mgT80C7E
+- Presentation Video: https://youtu.be/KrlUV-5Jtj8
 
 
 ## XII. Conclusion
