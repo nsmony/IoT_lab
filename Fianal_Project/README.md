@@ -183,7 +183,7 @@ The dataset was manually collected and labeled to improve detection accuracy.
 - Improved accuracy using multi-modal data
 - Reduced food loss during storage
 - Faster response compared to manual inspection
-- Demo: https://youtu.be/KORGQ7sVHcE
+- Demo: https://youtu.be/Q2_mgT80C7E
 
 
 ## XII. Conclusion
